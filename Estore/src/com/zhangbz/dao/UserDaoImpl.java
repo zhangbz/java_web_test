@@ -1,5 +1,6 @@
 package com.zhangbz.dao;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 
 import org.apache.commons.dbutils.QueryRunner;
@@ -10,7 +11,7 @@ import com.zhangbz.util.DaoUtils;
 
 public class UserDaoImpl implements UserDao {
 
-	public void addUser(User user) {
+	public void addUser(User user, Connection conn) {
 		String sql = "insert into users values(null,?, ?, ?, ?, ?, ?, ?, null)";
 		try {
 			QueryRunner runner = new QueryRunner(DaoUtils.getSource());
@@ -22,7 +23,7 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
-	public User findUserByName(String username) {
+	public User findUserByName(String username, Connection conn) {
 		String sql = "select * from users where username = ?";
 		try {
 			QueryRunner runner = new QueryRunner(DaoUtils.getSource());

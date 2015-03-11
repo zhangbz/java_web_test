@@ -11,7 +11,7 @@ public class LoginServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//1.
+		//
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
